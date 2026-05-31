@@ -21,7 +21,7 @@ git init
 git add .
 git commit -m "Initial commit: Milan Mohan personal website"
 git branch -M main
-git remote add origin https://github.com/MT25MB/milan-mohan-website.git
+git remote add origin https://github.com/MT25MB/milan-mohan.git
 git push -u origin main
 ```
 
