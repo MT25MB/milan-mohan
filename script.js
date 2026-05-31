@@ -12,6 +12,7 @@
     const themeToggle = document.getElementById('themeToggle');
     const abstractToggle = document.getElementById('abstractToggle');
     const abstractContent = document.getElementById('abstractContent');
+    const backToTop = document.getElementById('backToTop');
     const navLinkEls = document.querySelectorAll('.nav__link');
     const revealEls = document.querySelectorAll('.reveal');
 
@@ -74,8 +75,6 @@
     });
 
     // ===================== NAV SCROLL EFFECT =====================
-    var lastScrollY = 0;
-
     function onScroll() {
         var scrollY = window.scrollY;
 
@@ -86,11 +85,21 @@
             nav.classList.remove('nav--scrolled');
         }
 
-        lastScrollY = scrollY;
+        // Back to top button visibility
+        if (scrollY > 400) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+
+    // ===================== BACK TO TOP =====================
+    backToTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
     // ===================== ACTIVE NAV LINK HIGHLIGHTING =====================
     var sections = document.querySelectorAll('section[id]');
@@ -162,4 +171,13 @@
             navToggle.focus();
         }
     });
+
+    // ===================== TYPED EFFECT FOR TAGLINE (OPTIONAL) =====================
+    // Adds a subtle cursor blink to the tagline on first load
+    var tagline = document.querySelector('.hero__tagline');
+    if (tagline) {
+        tagline.style.borderRight = '2px solid var(--color-accent)';
+        tagline.style.paddingRight = '4px';
+        tagline.style.animation = 'cursorBlink 1s step-end infinite';
+    }
 })();
