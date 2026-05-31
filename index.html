@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milan Mohan — AI/ML Researcher</title>
+    <meta name="description" content="Personal website of Milan Mohan, an AI/ML researcher at Algoverse AI Research (Stanford University) focused on fairness, foundation models, and health equity.">
+    <meta property="og:title" content="Milan Mohan — AI/ML Researcher">
+    <meta property="og:description" content="AI/ML researcher at Algoverse AI Research (Stanford) focused on fairness, foundation models, and health equity.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ===================== NAVIGATION ===================== -->
+    <nav class="nav" id="nav">
+        <div class="nav__inner">
+            <a href="#hero" class="nav__wordmark">Milan Mohan</a>
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav__links" id="navLinks">
+                <a href="#about" class="nav__link">About</a>
+                <a href="#research" class="nav__link">Research</a>
+                <a href="#experience" class="nav__link">Experience</a>
+                <a href="#education" class="nav__link">Education</a>
+                <a href="#contact" class="nav__link">Contact</a>
+                <button class="nav__theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+                    <svg class="icon icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <svg class="icon icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- ===================== HERO / ABOUT ===================== -->
+        <section class="hero" id="hero">
+            <div class="hero__bg"></div>
+            <div class="hero__content" id="about">
+                <div class="hero__text">
+                    <div class="hero__badges">
+                        <span class="badge badge--primary">Algoverse AI Research · Stanford</span>
+                        <span class="badge badge--secondary">Nashua High School South</span>
+                    </div>
+                    <h1 class="hero__name">Milan Mohan</h1>
+                    <p class="hero__tagline">AI/ML Researcher · Nashua, NH</p>
+                    <p class="hero__bio">
+                        Milan Mohan is an AI/ML researcher at Algoverse AI Research (affiliated with Stanford University) and a student at Nashua High School South in Nashua, NH. His research focuses on AI fairness, foundation models, and health equity — particularly auditing large-scale medical imaging models for demographic bias. He is also an alumnus of MIT Lincoln Laboratory's competitive LLCipher cryptography program and is broadly interested in the intersection of AI safety, cybersecurity, and machine learning.
+                    </p>
+                    <div class="hero__socials">
+                        <a href="https://www.linkedin.com/in/milan-mohan/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="https://openreview.net/profile?id=~Milan_Mohan1" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="OpenReview">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm-1-7.5c-.69 0-1.25-.56-1.25-1.25S9.31 7 10 7s1.25.56 1.25 1.25S10.69 9.5 10 9.5zm5 7.5h-2v-3.5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5V17h-2v-6h2v.84c.58-.84 1.58-1.34 2.5-1.34 1.93 0 2.5 1.32 2.5 3v6z"/></svg>
+                        </a>
+                        <!-- ADD YOUR EMAIL HERE -->
+                        <a href="mailto:your-email@example.com" class="social-link" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero__photo-wrapper">
+                    <!-- PROFILE PHOTO: replace the div below with <img src="assets/your-photo.jpg" alt="Milan Mohan" class="hero__photo"> -->
+                    <div class="hero__photo hero__photo--placeholder" aria-label="Profile photo placeholder">
+                        <span class="hero__initials">MM</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== RESEARCH ===================== -->
+        <section class="section" id="research">
+            <div class="container">
+                <h2 class="section__heading reveal">Research</h2>
+                <div class="research-card reveal">
+                    <div class="research-card__accent"></div>
+                    <div class="research-card__content">
+                        <div class="research-card__venues">
+                            <span class="venue-badge venue-badge--teal">ICML 2026 · SD4H Workshop</span>
+                            <span class="venue-badge venue-badge--purple">AI4X-AC 2026 · Poster</span>
+                        </div>
+                        <h3 class="research-card__title">A Fairness Audit of Medical Imaging Foundation Models on a Multimodal Structured Clinical Benchmark</h3>
+                        <p class="research-card__authors">
+                            <strong>Milan Mohan</strong>, Saketh Lingisetty, Umar Ahmad, Avi Kumar, Shankar Harikrishnan, Sanjana Chamarty, Kevin Zhu
+                        </p>
+                        <p class="research-card__tldr">
+                            <em>TL;DR:</em> We benchmark medical imaging foundation models for PE diagnosis, revealing spatial representation limits, negligible multimodal fusion gains, and severe age-related underdiagnosis that adversarial debiasing reduces with minimal performance trade-off.
+                        </p>
+                        <div class="research-card__keywords">
+                            <span class="keyword">Fairness in ML</span>
+                            <span class="keyword">Medical Imaging</span>
+                            <span class="keyword">Foundation Models</span>
+                            <span class="keyword">Multimodal Learning</span>
+                            <span class="keyword">Bias &amp; Disparities</span>
+                            <span class="keyword">Adversarial Debiasing</span>
+                            <span class="keyword">Health Equity</span>
+                            <span class="keyword">AI Safety in Healthcare</span>
+                        </div>
+                        <button class="abstract-toggle" id="abstractToggle" aria-expanded="false" aria-controls="abstractContent">
+                            Abstract <span class="abstract-toggle__arrow">▾</span>
+                        </button>
+                        <div class="research-card__abstract" id="abstractContent">
+                            <p>We conduct the first systematic fairness audit of three medical imaging foundation models (MedImageInsight, MedSigLIP, and BiomedCLIP) on INSPECT, a multimodal structured benchmark pairing CTPA imaging with longitudinal EHR for pulmonary embolism (PE) diagnosis and seven prognostic tasks. All three frozen encoders fall below the CT-LRCN baseline on PE diagnosis (AUROC 0.680–0.684 vs. 0.721). Our primary finding is that age is the dominant and previously unreported disparity dimension on INSPECT: patients aged 18–40 have underdiagnosis rates (UDR) of 0.63–0.80 versus 0.31–0.41 for ages 75–90, with MedSigLIP and BiomedCLIP reaching near-chance AUROC (0.508) for younger patients. This gap exceeds race/ethnicity and gender disparities and persists across all eight tasks. Age-targeted adversarial debiasing cuts MedImageInsight's age gap by 79% (0.333→0.069; p&lt;0.001) at only 0.011 AUROC cost, establishing a practical mitigation path for high-capacity encoders.</p>
+                        </div>
+                        <div class="research-card__actions">
+                            <a href="https://openreview.net/forum?id=rkfeiWSZvy" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                                Paper
+                            </a>
+                            <a href="https://openreview.net/pdf?id=rkfeiWSZvy" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg>
+                                PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== EXPERIENCE ===================== -->
+        <section class="section section--alt" id="experience">
+            <div class="container">
+                <h2 class="section__heading reveal">Experience</h2>
+                <div class="timeline">
+                    <div class="timeline__line"></div>
+
+                    <div class="timeline__item reveal">
+                        <div class="timeline__marker">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r=".5" fill="currentColor"/></svg>
+                        </div>
+                        <div class="timeline__card">
+                            <div class="timeline__card-header">
+                                <div>
+                                    <h3 class="timeline__org">Algoverse AI Research</h3>
+                                    <p class="timeline__role">AI/ML Researcher</p>
+                                </div>
+                                <span class="timeline__date">Present</span>
+                            </div>
+                            <a href="https://algoverseairesearch.org" class="timeline__link" target="_blank" rel="noopener noreferrer">algoverseairesearch.org</a>
+                            <ul class="timeline__bullets">
+                                <li>Collaborating with PhD mentors and peers at Stanford and UC Berkeley to design, implement, and publish original ML research</li>
+                                <li>Conducting research on AI fairness, foundation model evaluation, and medical imaging</li>
+                                <li>Published work accepted at ICML 2026 and AI4X-AC 2026</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item reveal">
+                        <div class="timeline__marker">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        </div>
+                        <div class="timeline__card">
+                            <div class="timeline__card-header">
+                                <div>
+                                    <h3 class="timeline__org">MIT Lincoln Laboratory</h3>
+                                    <p class="timeline__role">LLCipher Alumnus</p>
+                                </div>
+                                <span class="timeline__date">Summer Program</span>
+                            </div>
+                            <p class="timeline__note">Competitive summer program (5% acceptance rate)</p>
+                            <ul class="timeline__bullets">
+                                <li>Free one-week MIT Lincoln Laboratory workshop at MIT Beaver Works (Cambridge, MA) introducing high school students to theoretical cryptography</li>
+                                <li>Studied core foundations: modular arithmetic, abstract algebra, number theory, and complexity theory used to analyze and construct secure cryptographic schemes</li>
+                                <li>Explored advanced topics: zero-knowledge proofs, blockchain concepts, and multi-party computation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item reveal">
+                        <div class="timeline__marker">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </div>
+                        <div class="timeline__card">
+                            <div class="timeline__card-header">
+                                <div>
+                                    <h3 class="timeline__org">Local Food Bank</h3>
+                                    <p class="timeline__role">Volunteer</p>
+                                </div>
+                                <span class="timeline__date">100+ hours</span>
+                            </div>
+                            <ul class="timeline__bullets">
+                                <li>Support daily meal service and pantry operations: preparing and serving hot dinners, assembling and distributing balanced grocery bags, receiving and sorting fresh produce</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== EDUCATION ===================== -->
+        <section class="section" id="education">
+            <div class="container">
+                <h2 class="section__heading reveal">Education</h2>
+                <div class="education-card reveal">
+                    <h3 class="education-card__school">Nashua High School South</h3>
+                    <p class="education-card__location">Nashua, NH</p>
+                    <p class="education-card__status">Current Student</p>
+                    <div class="education-card__activities">
+                        <span class="chip">Varsity Alpine Ski Racing</span>
+                        <span class="chip">JV Captain Cross Country (XC)</span>
+                        <span class="chip">NHSEE (NH Science and Engineering Exposition)</span>
+                        <span class="chip">Math Team (NEML — New England Math League)</span>
+                        <span class="chip">International Research Olympiad</span>
+                        <span class="chip">Computer Science Club (ACL)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== RESEARCH INTERESTS ===================== -->
+        <section class="section section--alt" id="interests">
+            <div class="container">
+                <h2 class="section__heading reveal">Research Interests</h2>
+                <div class="interests-grid reveal">
+                    <span class="interest-chip">AI Fairness &amp; Bias</span>
+                    <span class="interest-chip">Medical Imaging AI</span>
+                    <span class="interest-chip">Foundation Models</span>
+                    <span class="interest-chip">Large Language Models (LLMs)</span>
+                    <span class="interest-chip">Cybersecurity</span>
+                    <span class="interest-chip">AI Safety in Healthcare</span>
+                    <span class="interest-chip">Multimodal Learning</span>
+                    <span class="interest-chip">Adversarial Robustness</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===================== FOOTER / CONTACT ===================== -->
+    <footer class="footer" id="contact">
+        <div class="container footer__inner">
+            <h2 class="footer__name">Milan Mohan</h2>
+            <div class="footer__links">
+                <a href="https://www.linkedin.com/in/milan-mohan/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://openreview.net/profile?id=~Milan_Mohan1" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="OpenReview">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm-1-7.5c-.69 0-1.25-.56-1.25-1.25S9.31 7 10 7s1.25.56 1.25 1.25S10.69 9.5 10 9.5zm5 7.5h-2v-3.5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5V17h-2v-6h2v.84c.58-.84 1.58-1.34 2.5-1.34 1.93 0 2.5 1.32 2.5 3v6z"/></svg>
+                </a>
+                <a href="mailto:your-email@example.com" class="social-link" aria-label="Email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </a>
+            </div>
+            <p class="footer__copy">&copy; 2026 Milan Mohan</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
