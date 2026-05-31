@@ -381,6 +381,19 @@ button {
     animation: heroMesh 12s ease-in-out infinite alternate;
 }
 
+/* Subtle grid pattern overlay */
+.hero__bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 1;
+}
+
 @keyframes heroMesh {
     0% {
         transform: translate(0, 0) scale(1);
@@ -467,6 +480,33 @@ button {
     gap: var(--space-md);
 }
 
+/* Hero stats */
+.hero__stats {
+    display: flex;
+    gap: var(--space-2xl);
+    margin-bottom: var(--space-xl);
+}
+
+.hero__stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero__stat-number {
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1.1;
+}
+
+.hero__stat-label {
+    font-size: var(--fs-xs);
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
 /* Social link icon buttons */
 .social-link {
     display: flex;
@@ -505,29 +545,16 @@ button {
     border-radius: 50%;
     overflow: hidden;
     position: relative;
-}
-
-.hero__photo--placeholder {
-    background: var(--gradient-photo);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid var(--color-border);
-    box-shadow: 0 0 60px var(--color-accent-glow), 0 0 120px var(--color-accent-dim);
-}
-
-.hero__initials {
-    font-family: var(--font-display);
-    font-size: var(--fs-4xl);
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.7);
-    user-select: none;
-}
-
-.hero__photo img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
+    object-position: center 15%;
+    border: 3px solid var(--color-border);
+    box-shadow: 0 0 40px var(--color-accent-glow), 0 0 80px var(--color-accent-dim);
+    transition: box-shadow var(--transition-slow), transform var(--transition-slow);
+}
+
+.hero__photo:hover {
+    box-shadow: 0 0 60px var(--color-accent-glow), 0 0 120px var(--color-accent-dim);
+    transform: scale(1.03);
 }
 
 /* ===================== RESEARCH CARD ===================== */
@@ -970,6 +997,12 @@ button {
     font-weight: 600;
 }
 
+.footer__tagline {
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
+    margin-top: -8px;
+}
+
 .footer__links {
     display: flex;
     gap: var(--space-md);
@@ -1007,6 +1040,28 @@ button {
 }
 
 /* ===================== BACK TO TOP BUTTON ===================== */
+.scroll-indicator {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-text-muted);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: scrollBounce 2s ease-in-out infinite;
+    z-index: 2;
+}
+
+@keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+}
+
 .back-to-top {
     position: fixed;
     bottom: 32px;
@@ -1078,15 +1133,6 @@ button {
     50% { transform: translateY(-8px); }
 }
 
-.hero__photo--placeholder {
-    animation: glowPulse 4s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-    0%, 100% { box-shadow: 0 0 40px var(--color-accent-glow), 0 0 80px var(--color-accent-dim); }
-    50% { box-shadow: 0 0 60px var(--color-accent-glow), 0 0 120px var(--color-accent-dim); }
-}
-
 /* ===================== PAGE LOAD ANIMATION ===================== */
 body {
     animation: pageLoad 0.6s ease-out;
@@ -1095,18 +1141,6 @@ body {
 @keyframes pageLoad {
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===================== GRAIN TEXTURE OVERLAY ===================== */
-.hero__bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    pointer-events: none;
-    z-index: 1;
 }
 
 /* ===================== ENHANCED RESEARCH CARD ===================== */
@@ -1271,6 +1305,10 @@ body {
         padding-bottom: var(--space-2xl);
     }
 
+    .scroll-indicator {
+        display: none;
+    }
+
     .hero__name {
         font-size: var(--fs-4xl);
     }
@@ -1280,12 +1318,17 @@ body {
         height: 160px;
     }
 
-    .hero__initials {
-        font-size: var(--fs-3xl);
-    }
-
     .hero__bio {
         font-size: var(--fs-sm);
+    }
+
+    .hero__stats {
+        gap: var(--space-xl);
+        justify-content: center;
+    }
+
+    .hero__stat-number {
+        font-size: var(--fs-xl);
     }
 
     /* Research card */
@@ -1376,5 +1419,30 @@ body {
     .section {
         padding: 1rem 0;
         break-inside: avoid;
+    }
+}
+
+/* ===================== REDUCED MOTION ===================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    .chip, .interest-chip {
+        opacity: 1;
+        transform: none;
     }
 }
