@@ -1,6 +1,6 @@
 # Milan Mohan — Personal Website
 
-A single-page personal academic website for Milan Mohan, AI/ML researcher at Algoverse AI Research (Stanford University).
+A single-page personal academic website for Milan Mohan, AI/ML researcher at Algoverse AI Research.
 
 ## Features
 

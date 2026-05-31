@@ -50,9 +50,9 @@
 /* ---- Dark theme (default) ---- */
 [data-theme="dark"] {
     --color-bg: #0a0f1e;
-    --color-bg-alt: #0e1428;
-    --color-bg-card: #111830;
-    --color-bg-card-hover: #161e3a;
+    --color-bg-alt: #0e1225;
+    --color-bg-card: #111530;
+    --color-bg-card-hover: #161a3a;
     --color-surface: rgba(255, 255, 255, 0.04);
     --color-surface-hover: rgba(255, 255, 255, 0.07);
     --color-border: rgba(255, 255, 255, 0.08);
@@ -62,26 +62,26 @@
     --color-text-secondary: #9ba1b7;
     --color-text-muted: #6b7194;
 
-    --color-accent: #4fc3f7;
-    --color-accent-dim: rgba(79, 195, 247, 0.15);
-    --color-accent-glow: rgba(79, 195, 247, 0.25);
-    --color-accent-secondary: #7c4dff;
-    --color-accent-secondary-dim: rgba(124, 77, 255, 0.15);
+    --color-accent: #e040fb;
+    --color-accent-dim: rgba(224, 64, 251, 0.15);
+    --color-accent-glow: rgba(224, 64, 251, 0.25);
+    --color-accent-secondary: #448aff;
+    --color-accent-secondary-dim: rgba(68, 138, 255, 0.15);
 
     --color-nav-bg: rgba(10, 15, 30, 0.8);
     --color-shadow: rgba(0, 0, 0, 0.4);
 
-    --gradient-hero: linear-gradient(135deg, #0a0f1e 0%, #111d3a 50%, #0a0f1e 100%);
-    --gradient-accent: linear-gradient(135deg, #4fc3f7, #7c4dff);
-    --gradient-photo: linear-gradient(135deg, #1a2a4a, #2a1a4a);
+    --gradient-hero: linear-gradient(135deg, #0a0f1e 0%, #1a0a2e 50%, #0a0f1e 100%);
+    --gradient-accent: linear-gradient(135deg, #ff5252, #e040fb, #448aff);
+    --gradient-photo: linear-gradient(135deg, #2a1a3a, #1a1a4a);
 }
 
 /* ---- Light theme ---- */
 [data-theme="light"] {
-    --color-bg: #f5f6fa;
-    --color-bg-alt: #eaecf2;
+    --color-bg: #f8f6fc;
+    --color-bg-alt: #f0ecf6;
     --color-bg-card: #ffffff;
-    --color-bg-card-hover: #f8f9fc;
+    --color-bg-card-hover: #faf8fc;
     --color-surface: rgba(0, 0, 0, 0.03);
     --color-surface-hover: rgba(0, 0, 0, 0.06);
     --color-border: rgba(0, 0, 0, 0.08);
@@ -91,18 +91,18 @@
     --color-text-secondary: #4a5068;
     --color-text-muted: #7a7f96;
 
-    --color-accent: #0288d1;
-    --color-accent-dim: rgba(2, 136, 209, 0.1);
-    --color-accent-glow: rgba(2, 136, 209, 0.18);
-    --color-accent-secondary: #5e35b1;
-    --color-accent-secondary-dim: rgba(94, 53, 177, 0.1);
+    --color-accent: #d81b60;
+    --color-accent-dim: rgba(216, 27, 96, 0.1);
+    --color-accent-glow: rgba(216, 27, 96, 0.18);
+    --color-accent-secondary: #5c6bc0;
+    --color-accent-secondary-dim: rgba(92, 107, 192, 0.1);
 
-    --color-nav-bg: rgba(245, 246, 250, 0.85);
+    --color-nav-bg: rgba(248, 246, 252, 0.85);
     --color-shadow: rgba(0, 0, 0, 0.08);
 
-    --gradient-hero: linear-gradient(135deg, #f5f6fa 0%, #e3e8f2 50%, #f5f6fa 100%);
-    --gradient-accent: linear-gradient(135deg, #0288d1, #5e35b1);
-    --gradient-photo: linear-gradient(135deg, #c5cae9, #b39ddb);
+    --gradient-hero: linear-gradient(135deg, #f8f6fc 0%, #f0e8f6 50%, #f8f6fc 100%);
+    --gradient-accent: linear-gradient(135deg, #d81b60, #5c6bc0);
+    --gradient-photo: linear-gradient(135deg, #e8d0f0, #c5cae9);
 }
 
 /* ===================== RESET & BASE ===================== */
@@ -442,13 +442,13 @@ button {
 .badge--primary {
     background: var(--color-accent-dim);
     color: var(--color-accent);
-    border: 1px solid rgba(79, 195, 247, 0.2);
+    border: 1px solid var(--color-accent-glow);
 }
 
 .badge--secondary {
     background: var(--color-accent-secondary-dim);
     color: var(--color-accent-secondary);
-    border: 1px solid rgba(124, 77, 255, 0.2);
+    border: 1px solid var(--color-accent-secondary-dim);
 }
 
 .hero__name {
@@ -1099,9 +1099,9 @@ button {
 
 /* ===================== TIMELINE "PRESENT" PULSE ===================== */
 .timeline__date--current {
-    background: rgba(79, 195, 247, 0.12);
+    background: var(--color-accent-dim);
     color: var(--color-accent);
-    border-color: rgba(79, 195, 247, 0.3);
+    border-color: var(--color-accent-glow);
     position: relative;
 }
 
@@ -1119,8 +1119,8 @@ button {
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(79, 195, 247, 0.4); }
-    50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(79, 195, 247, 0); }
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 var(--color-accent-glow); }
+    50% { opacity: 0.7; box-shadow: 0 0 0 6px transparent; }
 }
 
 /* ===================== PHOTO GLOW ANIMATION ===================== */

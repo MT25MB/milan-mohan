@@ -137,14 +137,35 @@
             });
         },
         {
-            threshold: 0.1,
-            rootMargin: '0px 0px -40px 0px'
+            threshold: 0.05,
+            rootMargin: '0px 0px 50px 0px'
         }
     );
 
     revealEls.forEach(function (el) {
         revealObserver.observe(el);
     });
+
+    // Fallback: if elements are already in view on load, reveal them immediately
+    setTimeout(function () {
+        revealEls.forEach(function (el) {
+            var rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                el.classList.add('visible');
+                revealObserver.unobserve(el);
+            }
+        });
+    }, 100);
+
+    // Safety net: reveal everything after 3 seconds in case observer fails
+    setTimeout(function () {
+        revealEls.forEach(function (el) {
+            if (!el.classList.contains('visible')) {
+                el.classList.add('visible');
+                revealObserver.unobserve(el);
+            }
+        });
+    }, 3000);
 
     // ===================== ABSTRACT TOGGLE =====================
     abstractToggle.addEventListener('click', function () {
